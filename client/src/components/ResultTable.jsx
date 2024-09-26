@@ -58,7 +58,7 @@ export default function ResultTable() {
                 <td>{result?.username}</td>
                 <td>{result?.attempts}</td>
                 <td>{result?.points}</td>
-                <td>{result?.achieved ? 'Passed' : 'Failed'}</td>
+                <td>{result?.achieved === 'true' ? 'Passed' : 'Failed'}</td>
               </tr>
             ))
           )}

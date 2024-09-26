@@ -10,6 +10,7 @@ import {
   flagResult,
   postServerData,
 } from '../helper/helper';
+import { url } from '../url';
 
 export default function Quiz() {
   const [checked, setChecked] = useState(undefined);
@@ -23,7 +24,7 @@ export default function Quiz() {
   const flag = flagResult(totalPoints, earnedPoints);
 
   const onFinish = async () => {
-    await postServerData('http://localhost:8080/api/results', {
+    await postServerData(`${url}/api/results`, {
       username: userId,
       result: [...result, checked],
       attempts,

@@ -18,7 +18,7 @@ app.use(express.json());
 config();
 
 // Applcation part
-const _port = process.env.PORT || 8080;
+const _port = process.env.PORT || 8000;
 
 // routes
 const questionRouter = require('./routes/questionRoute');

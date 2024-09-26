@@ -5,6 +5,7 @@ import Main from './Main';
 import Quiz from './Quiz';
 import Result from './Result';
 import CheckUserExist from './../helper/CheckUserExist';
+import NotFound from './NotFound';
 
 // styles
 import './../styles/App.css';
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
         <Result />
       </CheckUserExist>
     ),
+  },
+  {
+    path: '*',
+    element: <NotFound />,
   },
 ]);
 

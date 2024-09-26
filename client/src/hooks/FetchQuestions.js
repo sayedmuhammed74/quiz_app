@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import * as Action from '../redux/question_reducer';
 import { getServerData } from '../helper/helper';
+import { url } from '../url';
 
 // fetch question hook to fetch api data and set value to store
 export const useFetchQuestion = () => {
@@ -21,7 +22,7 @@ export const useFetchQuestion = () => {
       try {
         const {
           data: { questions, answers },
-        } = await getServerData('http://localhost:8080/api/questions');
+        } = await getServerData(`${url}/api/questions`);
         console.log({ questions, answers });
         if (questions.length > 0) {
           setGetData((prev) => ({ ...prev, isLoading: false }));

@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { url } from '../url';
 
 export default function ResultTable() {
   const [results, setResults] = useState([]);
   useEffect(() => {
     axios
-      .get('http://localhost:8080/api/results')
+      .get(`${url}/api/results`)
       .then((res) => setResults(res?.data?.data?.results))
       .catch((err) => console.log(err));
   }, []);
